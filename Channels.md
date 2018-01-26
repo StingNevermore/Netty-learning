@@ -33,7 +33,26 @@ netty channel的一些注意事项:
 
    有一个非常重要的事情, 当你完成channel的处理之后, 需要调用close\(\) 或 close\(ChannelPromise\) 方法来释放所有的资源. 这样可以确保所有的资源以正确的方式被释放, 例如文件操作等.
 
+# Channel Handler
 
+### 功能
+
+Channel Handler的功能, 如在javadoc中所说:
+
+> 处理I/O事件或者拦截I/O操作, 并转发给它所在ChannelPipeline中的下一个handler.
+
+### 子类型 {#subtype}
+
+ChannelHandler本身并不提供很多方法, 但是通常需要实现它的子类型之一:
+
+* ChannelInboundHandler 用于处理inbound I/O事件
+* ChannelOutboundHandler 用于处理outbound I/O事件
+
+或者, 为了方便使用, 提供了下面的adapter 类:
+
+* ChannelInboundHandlerAdapter 用于处理inbound I/O事件
+* ChannelOutboundHandlerAdapter 用于处理outbound I/O事件
+* ChannelDuplexHandler 用于同时处理 inbound 和 outbound事件
 
 
 

@@ -2,8 +2,5 @@
 
 * [Introduction](README.md)
 * [Channels](/Channels.md)
-* [ByteBuf](Bytebufs.md)s
-* * Channel Handlers
-
-
+* [ByteBuf](Bytebufs.md)
 
