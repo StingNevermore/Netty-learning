@@ -2,7 +2,8 @@
 
 * [Introduction](README.md)
 * [Channels](/Channels.md)
-* \[\*ByteBufs\]\(/ByteBufs\)
+* [ByteBufs](Bytebufs.md)
+* subtype
 
 
 
