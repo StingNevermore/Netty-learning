@@ -1,17 +1,17 @@
 # Channels
 
+## Channel简介
 Channel 是netty中提供的对网络操作的抽象类,类似于NIO中的Channel \(java.nio.SocketChannel/java.nio.ServerSocketChannel\). Netty的javadoc中时这样描述的:
 
 > A nexus to a network socket or a component which is capable of I/O operations such as read, write, connect, and bind.**对网络套接字或者有I/O操作能力\(例如读,写,连接和绑定\)的模块的关联\(抽象?\)**
 
 channel为使用者提供的功能:
-
 * channel当前的状态\(例如是不是打开? 是不是连接上了?\)
 * channel的配置参数\(例如接收缓冲区大小\)
 * 提供I/O操作\(例如读,写,连接和绑定\)
 * 提供ChannelPipeline,用于处理所有的I/O事件和关联到channel的请求
 
-## 注意事项
+### 注意事项
 
 netty channel的一些注意事项:
 
@@ -33,7 +33,7 @@ netty channel的一些注意事项:
 
    有一个非常重要的事情, 当你完成channel的处理之后, 需要调用close\(\) 或 close\(ChannelPromise\) 方法来释放所有的资源. 这样可以确保所有的资源以正确的方式被释放, 例如文件操作等.
 
-# Channel Handler {#channel-handler}
+## Channel Handler {#channel-handler}
 
 ### 功能
 
