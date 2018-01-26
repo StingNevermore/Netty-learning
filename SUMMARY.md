@@ -1,6 +1,6 @@
-# Table of content
+# Summary
 
+* [Introduction](README.md)
 * [Channels.md](//Channels.md)
-
-
+* [Channels.md](/Channels.md/subtype)
 
