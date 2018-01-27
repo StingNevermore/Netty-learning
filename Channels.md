@@ -33,7 +33,12 @@ netty channel的一些注意事项:
 
    有一个非常重要的事情, 当你完成channel的处理之后, 需要调用close\(\) 或 close\(ChannelPromise\) 方法来释放所有的资源. 这样可以确保所有的资源以正确的方式被释放, 例如文件操作等.
 
-## Channel Handler {#channel-handler}
+## Channle Future {#channel-future}
+Netty的所有操作都是I/O操作都是异步的，我们不能立即知道操作的结果，所以需要一种在将来的某个时间点获取操作结果的办法
+> 可以将 ChannelFuture 看作是将来要执行的操作的结果的 占位符。它究竟什么时候被执行则可能取决于若干的因素，因此不可能准确地预测，但是可以肯 定的是它将会被执行。此外，所有属于同一个 Channel 的操作都被保证其将以它们被调用的顺序 被执行。
+
+
+## Channel Handler 和 Channel Pipline {#channel-handler-and-channel-piplin}
 
 ### 功能
 
