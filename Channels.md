@@ -46,18 +46,28 @@ Channel Handler的功能, 如在javadoc中所说:
 
 > 处理I/O事件或者拦截I/O操作, 并转发给它所在ChannelPipeline中的下一个handler.
 
-### 子类型 {#subtype}
+事实上， ChannelHandler 可专 门用于几乎任何类型的动作，例如将数据从一种格式转换为另外一种格式，或者处理转换过程 中所抛出的异常。
 
-ChannelHandler本身并不提供很多方法, 但是通常需要实现它的子类型之一:
+### ChannelPipline
+ChannelPipline是ChannelHandler的容器，并定义了入站和出站事件处理的顺序
+```uml
+@startuml
+skinparam ParticipantPadding 20
+skinparam BoxPadding 10
 
-* ChannelInboundHandler 用于处理inbound I/O事件
-* ChannelOutboundHandler 用于处理outbound I/O事件
+participant "sokcet/tranport" as s
+box "ChannelPipeline"
+participant ChannelInboudHandler1 as in1
+participant ChannelInboudHandler2 as in2
+participant ChannelOutboudHandler1 as out1
+participant ChannelOutboudHandler2 as out2
+end box
+s --> in1 :
+in1 --> in2:
+out2 -> out1:
+out1 -> s:
 
-或者, 为了方便使用, 提供了下面的adapter 类:
-
-* ChannelInboundHandlerAdapter 用于处理inbound I/O事件
-* ChannelOutboundHandlerAdapter 用于处理outbound I/O事件
-* ChannelDuplexHandler 用于同时处理 inbound 和 outbound事件
-
+@enduml
+```
 
 
